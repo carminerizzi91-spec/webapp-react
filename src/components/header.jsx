@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function header() {
+function Header() {
 
     return (
         <nav className="navbar navbar-dark bg-dark">
@@ -13,4 +13,4 @@ function header() {
     );
 }
 
-export default header
+export default Header

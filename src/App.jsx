@@ -1,9 +1,22 @@
+import HomePage from "./pages/HomePage"
+import MoviePage from "./pages/MoviePage"
+import DefaultLayout from "./layouts/DefaultLayout"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
+
 function App() {
-  
+
   return (
-    
-    <hi className="display-1">Ciao</hi>
-    
+    <BrowserRouter>
+      <Routes>
+        <Route element={<DefaultLayout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/movie/:id" element={<MoviePage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+
+
   )
 }
 
