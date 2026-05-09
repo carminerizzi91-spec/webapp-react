@@ -1,6 +1,21 @@
+import axios from "axios";
+import { useState, useEffect } from "react";
 import CardMovie from "../components/CardMovie";
 
+
+
 function HomePage() {
+
+    const [movies, setMovies] = useState([]);
+
+    // definivione funzione per chiamata axios
+    const fetchMovies = () => {
+        axios.get("http://localhost:3000/api/movie")
+            .then(response => { setMovies(response.data) })
+            .catch(err => {
+                console.log(err);
+            })
+    }
 
     return (
         <>
