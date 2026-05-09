@@ -17,13 +17,26 @@ function HomePage() {
             })
     }
 
+    // funzione rendering 
+    const renderMovies = () => {
+        return movies.map((movie) => {
+            return (
+                <div className="col" key={movie.id}>
+                    <CardMovie movie = {movie} />
+                </div>
+            )
+        })
+    }
+    
+    useEffect(fetchMovies, []);
+
     return (
         <>
             <h1 className="text-primary">Movie Review</h1>
             <h2><i>The best movie community</i></h2>
 
             <div className="row row-cols-3 mt-4">
-                <CardMovie />
+                {renderMovies()}
             </div>
         </>
 
