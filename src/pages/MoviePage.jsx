@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import CardReview from "../components/CardReview";
+import ReviewForm from "../components/ReviewForm";
 
 function MoviePage() {
 
@@ -52,9 +53,12 @@ function MoviePage() {
                 <div className="col">
                     {renderReviews()}
                 </div>
-
             </section>
 
+            <section>
+                {movie?.id && <ReviewForm movie_id={movie.id} />}
+            </section>
+            
             <footer className="border-top border-1 pt-2 mb-3 d-flex justify-content-between">
                 <Link className="btn btn-secondary" to="/">
                     Back to home
