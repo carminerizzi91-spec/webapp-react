@@ -56,7 +56,7 @@ function MoviePage() {
             </section>
 
             <section>
-                {movie?.id && <ReviewForm movie_id={movie.id} />}
+                {movie?.id && <ReviewForm movie_id={movie.id} refreshReviews={fetchMovie}/>}
             </section>
             
             <footer className="border-top border-1 pt-2 mb-3 d-flex justify-content-between">

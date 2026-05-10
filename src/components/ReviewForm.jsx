@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 
-function ReviewForm({ movie_id }) {
+function ReviewForm({ movie_id, refreshReviews }) {
     // creiamo url dell'endpoint da chiamare
     const apiUrl = `http://localhost:3000/api/movie/${movie_id}/reviews`;
 
@@ -30,6 +30,7 @@ function ReviewForm({ movie_id }) {
         axios.post(apiUrl, formData, { headers: { 'Content-Type': 'application/json' } })
             .then(() => {
                 setFormData(initialValueForm);
+                refreshReviews();
             })
             .catch((err) => {
                 console.log(err);
